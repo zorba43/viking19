@@ -105,35 +105,62 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <header id="hdr">
-  <div class="nav">
-    <a href="#top" class="logo">
+  <div class="nav" style="display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 40px;width:100%">
+
+    <!-- Sol: Logo -->
+    <a href="index.html" style="text-decoration:none">
       <span class="wordmark"><span class="name">VIKING19</span><span class="sub">Golf Pub</span></span>
     </a>
-    <!-- 4 buton — sayfalarını ayrıca tasarlayacağız -->
-    <nav class="nav-links" id="menu">
-      <a href="menu.html">Menü</a>
-      <a href="#rezervasyon">Rezervasyon</a>
-      <!-- Instagram -->
-<a href="https://www.instagram.com/viking19hole/" target="_blank"
-   style="display:inline-flex;align-items:center;opacity:.8;transition:.25s;margin-left:8px"
-   onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f1e8d4" stroke-width="1.5">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <circle cx="12" cy="12" r="4"/>
-    <circle cx="17.5" cy="6.5" r="1" fill="#f1e8d4" stroke="none"/>
-  </svg>
-</a>
-      <!-- TripAdvisor -->
-<a href="https://www.tripadvisor.com.tr/Restaurant_Review-g297963-d28656234-Reviews-Viking19_Golf_Pub-Serik_Serik_District_Turkish_Mediterranean_Coast.html" target="_blank"
-   style="display:inline-flex;align-items:center;opacity:.8;transition:.25s;margin-left:8px"
-   onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">
-  <svg width="20" height="18" viewBox="0 0 24 24" fill="#f1e8d4">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-  </svg>
-</a>
+
+    <!-- Orta: Dil + Sosyal ikonlar -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;position:absolute;left:50%;transform:translateX(-50%)">
+      <!-- Dil butonları üstte -->
+      <div style="display:flex;gap:14px;align-items:center">
+        <button onclick="setLang('tr')" id="lang-tr" style="background:none;border:none;border-bottom:1px solid #c9a45a;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:1;padding:0 0 2px;transition:.2s">TR</button>
+        <button onclick="setLang('en')" id="lang-en" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">EN</button>
+        <button onclick="setLang('ru')" id="lang-ru" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">RU</button>
+        <button onclick="setLang('de')" id="lang-de" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">DE</button>
+      </div>
+      <!-- İkonlar ve yazılar altta -->
+      <div style="display:flex;align-items:flex-start;gap:24px">
+        <a href="https://www.instagram.com/viking19hole/" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;opacity:.85;transition:.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="25%" style="stop-color:#e6683c"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="75%" style="stop-color:#cc2366"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient></defs>
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4" stroke="url(#ig)" stroke-width="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/>
+          </svg>
+          <span style="font-family:'EB Garamond',serif;font-size:.6rem;letter-spacing:.14em;color:#f1e8d4;opacity:.7;text-transform:uppercase">Instagram</span>
+        </a>
+        <a href="https://www.tripadvisor.com.tr/Restaurant_Review-g297963-d28656234-Reviews-Viking19_Golf_Pub-Serik_Serik_District_Turkish_Mediterranean_Coast.html" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;opacity:.85;transition:.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">
+          <svg width="26" height="22" viewBox="0 0 32 22" fill="none">
+            <circle cx="8" cy="11" r="7" fill="#34E0A1" stroke="#00AA6C" stroke-width="1"/>
+            <circle cx="24" cy="11" r="7" fill="#34E0A1" stroke="#00AA6C" stroke-width="1"/>
+            <circle cx="8" cy="11" r="3" fill="white"/>
+            <circle cx="24" cy="11" r="3" fill="white"/>
+            <circle cx="8" cy="11" r="1.5" fill="#00AA6C"/>
+            <circle cx="24" cy="11" r="1.5" fill="#00AA6C"/>
+            <path d="M12 5 Q16 2 20 5" stroke="#00AA6C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span style="font-family:'EB Garamond',serif;font-size:.6rem;letter-spacing:.14em;color:#f1e8d4;opacity:.7;text-transform:uppercase">Tripadvisor</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sağ: Nav -->
+    <nav class="nav-links" id="main-nav" style="display:flex;gap:18px;align-items:center">
+      <a href="menu.html" id="nav-menu">MENÜ</a>
+      <a href="#rezervasyon" id="nav-rezervasyon">REZERVASYON</a>
     </nav>
+
     <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -142,14 +169,14 @@
 <section class="hero" id="top">
   <figure class="media" data-name="images/ana1.webp"><img src="images/ana1.webp" alt="" onerror="this.style.display='none'"></figure>
   <div class="hero-inner">
-    <h1>VIKING19</h1>
+    <h1 id="hero-title">VIKING19</h1>
   </div>
 </section>
 
 <section style="background:#0d0b08;text-align:center;padding:110px 28px 100px">
   <div style="font-size:1.4rem;letter-spacing:.5em;color:#f1e8d4;margin-bottom:28px">✦ ✦ ✦</div>
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(2.2rem,5vw,4rem);color:#f1e8d4;font-weight:500;letter-spacing:.06em;line-height:1.1;max-width:800px;margin:0 auto">SADECE EN İYİ BİLDİĞİMİZİ YAPTIK</h2>
-  <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:1rem;color:#f1e8d4;opacity:.85;margin:28px auto 0;max-width:480px;line-height:1.7">Enfes Yemekler, Unutulmaz Atmosfer ve Eğlence</p>
+  <h2 id="tagline-title" style="font-family:'Cinzel',serif;font-size:clamp(2.2rem,5vw,4rem);color:#f1e8d4;font-weight:500;letter-spacing:.06em;line-height:1.1;max-width:800px;margin:0 auto">SADECE EN İYİ BİLDİĞİMİZİ YAPTIK</h2>
+  <p id="tagline-sub" style="font-family:'Inter',sans-serif;font-weight:300;font-size:1rem;color:#f1e8d4;opacity:.85;margin:28px auto 0;max-width:480px;line-height:1.7">Enfes Yemekler, Unutulmaz Atmosfer ve Eğlence</p>
 </section>
 
 <section style="overflow:hidden;background:#0d0b08;position:relative">
@@ -203,17 +230,17 @@
 
   <!-- İçerik -->
   <div style="position:relative;z-index:2;padding:0 28px;max-width:720px">
-    <h2 style="font-family:'EB Garamond',serif;font-size:clamp(2.4rem,6vw,5rem);color:#f1e8d4;font-weight:500;line-height:1.1;letter-spacing:.04em;text-transform:none">
+    <h2 id="good-title" style="font-family:'EB Garamond',serif;font-size:clamp(2.4rem,6vw,5rem);color:#f1e8d4;font-weight:500;line-height:1.1;letter-spacing:.04em;text-transform:none">
       <span style="display:block">İyi Yemek.</span>
       <span style="display:block">Kaliteli Zaman.</span>
       <span style="display:block">Sınırsız Eğlence.</span>
     </h2>
-    <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:1rem;color:#f1e8d4;opacity:.88;margin:28px auto 38px;max-width:500px;line-height:1.75">
+    <p id="good-sub" style="font-family:'Inter',sans-serif;font-weight:300;font-size:1rem;color:#f1e8d4;opacity:.88;margin:28px auto 38px;max-width:500px;line-height:1.75">
       Sizin için her şeyi özenle hazırladığımız bu atmosferi deneyimleyin.
     </p>
 
     <!-- Rezervasyon butonu -->
-    <button onclick="document.getElementById('rez-popup').style.display='flex'"
+    <button id="good-btn" onclick="document.getElementById('rez-popup').style.display='flex'"
       style="display:inline-block;border:1px solid #c9a45a;color:#c9a45a;padding:17px 48px;border-radius:2px;font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;background:transparent;cursor:pointer;transition:.3s"
       onmouseover="this.style.background='#c9a45a';this.style.color='#0d0b08'"
       onmouseout="this.style.background='transparent';this.style.color='#c9a45a'">
@@ -238,7 +265,7 @@
     <a href="menu.html" style="font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;opacity:.7;text-decoration:none">Menü</a>
     <a href="#rez-popup" onclick="document.getElementById('rez-popup').style.display='flex';return false" style="font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;opacity:.7;text-decoration:none">Rezervasyon</a>
   </nav>
-  <div style="font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.14em;color:#b6a890">© <span id="yil"></span> VIKING19 GOLF PUB</div>
+  <div id="footer-copy" style="font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.14em;color:#b6a890">© <span id="yil"></span> VIKING19 GOLF PUB</div>
 </footer>
 
 <!-- Rezervasyon popup -->
@@ -280,7 +307,7 @@
 <script>
   const hdr=document.getElementById('hdr');
   addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40));
-  const burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  const burger=document.getElementById('burger'), menu=document.getElementById('main-nav');
   burger.addEventListener('click',()=>menu.classList.toggle('open'));
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
   document.getElementById('yil').textContent=new Date().getFullYear();
@@ -290,6 +317,84 @@
     const msg='Merhaba, Viking19 icin masa rezervasyonu yapmak istiyorum.\n\nAd Soyad: '+ad+'\nTelefon: '+tel+'\nTarih: '+tarih+'\nSaat: '+saat+'\nKisi: '+kisi+'\nDriving Range: '+range+(not?'\nNot: '+not:'');
     window.open('https://wa.me/905322622773?text='+encodeURIComponent(msg),'_blank');
   }
+</script>
+<script>
+var currentLang = localStorage.getItem('lang') || 'tr';
+
+var translations = {
+  tr: {
+    'nav-menu': 'MENÜ',
+    'nav-rezervasyon': 'REZERVASYON',
+    'hero-title': 'VIKING19',
+    'tagline-title': 'SADECE EN İYİ BİLDİĞİMİZİ YAPTIK',
+    'tagline-sub': 'Enfes Yemekler, Unutulmaz Atmosfer ve Eğlence',
+    'good-title': 'İyi Yemek.\nKaliteli Zaman.\nSınırsız Eğlence.',
+    'good-sub': 'Sizin için her şeyi özenle hazırladığımız bu atmosferi deneyimleyin.',
+    'good-btn': 'REZERVASYON',
+    'footer-copy': '© 2026 VIKING19 GOLF PUB',
+  },
+  en: {
+    'nav-menu': 'MENU',
+    'nav-rezervasyon': 'RESERVATION',
+    'hero-title': 'VIKING19',
+    'tagline-title': 'WE ONLY DO WHAT WE DO BEST',
+    'tagline-sub': 'Exquisite Food, Unforgettable Atmosphere and Entertainment',
+    'good-title': 'Good Food.\nQuality Time.\nUnlimited Fun.',
+    'good-sub': 'Experience the atmosphere we have carefully prepared just for you.',
+    'good-btn': 'RESERVATION',
+    'footer-copy': '© 2026 VIKING19 GOLF PUB',
+  },
+  ru: {
+    'nav-menu': 'МЕНЮ',
+    'nav-rezervasyon': 'РЕЗЕРВАЦИЯ',
+    'hero-title': 'VIKING19',
+    'tagline-title': 'МЫ ДЕЛАЕМ ТОЛЬКО ТО, ЧТО УМЕЕМ ЛУЧШЕ ВСЕГО',
+    'tagline-sub': 'Изысканная еда, незабываемая атмосфера и развлечения',
+    'good-title': 'Хорошая еда.\nКачественное время.\nБезграничное веселье.',
+    'good-sub': 'Ощутите атмосферу, которую мы тщательно подготовили для вас.',
+    'good-btn': 'РЕЗЕРВАЦИЯ',
+    'footer-copy': '© 2026 VIKING19 GOLF PUB',
+  },
+  de: {
+    'nav-menu': 'SPEISEKARTE',
+    'nav-rezervasyon': 'RESERVIERUNG',
+    'hero-title': 'VIKING19',
+    'tagline-title': 'WIR TUN NUR, WAS WIR AM BESTEN KÖNNEN',
+    'tagline-sub': 'Exquisites Essen, unvergessliche Atmosphäre und Unterhaltung',
+    'good-title': 'Gutes Essen.\nQualitätszeit.\nGrenzenloser Spaß.',
+    'good-sub': 'Erleben Sie die Atmosphäre, die wir sorgfältig für Sie vorbereitet haben.',
+    'good-btn': 'RESERVIERUNG',
+    'footer-copy': '© 2026 VIKING19 GOLF PUB',
+  }
+};
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+
+  ['tr','en','ru','de'].forEach(function(l) {
+    var btn = document.getElementById('lang-'+l);
+    if(btn) {
+      btn.style.opacity = l === lang ? '1' : '.5';
+      btn.style.borderBottom = l === lang ? '1px solid #c9a45a' : 'none';
+      btn.style.paddingBottom = l === lang ? '2px' : '0';
+    }
+  });
+
+  var t = translations[lang];
+  Object.keys(t).forEach(function(key) {
+    var el = document.getElementById(key);
+    if(el) {
+      if(el.tagName === 'BUTTON' || el.tagName === 'A') {
+        el.textContent = t[key];
+      } else {
+        el.innerHTML = t[key].replace(/\n/g, '<br>');
+      }
+    }
+  });
+}
+
+setLang(currentLang);
 </script>
 </body>
 </html>
