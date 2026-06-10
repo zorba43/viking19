@@ -93,10 +93,21 @@
   @keyframes scrollRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 
   @media(max-width:860px){
-    .nav-links{position:fixed;inset:0;background:rgba(20,17,13,.98);flex-direction:column;justify-content:center;transform:translateX(100%);transition:.4s}
-    .nav-links.open{transform:translateX(0)}
+    .nav{height:auto !important;padding:10px 16px !important;flex-wrap:wrap;gap:8px}
+    .wordmark .name{font-size:1.1rem !important}
+    .wordmark .sub{font-size:.44rem !important}
+    .nav > div[style*="position:absolute"]{position:static !important;transform:none !important;left:auto !important;order:3;width:100%;justify-content:center;padding:6px 0 4px;border-top:1px solid rgba(244,237,224,.08)}
+    #lang-tr, #lang-en, #lang-ru, #lang-de{font-size:.65rem !important;letter-spacing:.15em !important}
+    .nav span[style*="EB Garamond"]{font-size:.52rem !important}
+    #main-nav{display:none}
+    .burger{display:flex !important;z-index:60}
+    .nav-links{position:fixed;inset:0;background:rgba(20,17,13,.98);flex-direction:column;justify-content:center;transform:translateX(100%);transition:.4s;display:flex}
+    .nav-links.open{transform:translateX(0) !important;display:flex !important;align-items:center;gap:32px;z-index:55}
     .nav-links a{font-size:1.1rem}
-    .burger{display:flex;z-index:60}
+    .hero h1{font-size:clamp(2.5rem,14vw,5rem) !important}
+    #row1 img, #row2 img{height:240px !important;width:240px !important}
+    .about h2, #good-title{font-size:clamp(2rem,10vw,3.5rem) !important}
+    div[style*="clamp(4rem"]{font-size:clamp(3rem,18vw,7rem) !important}
     .gallery{grid-template-columns:repeat(2,1fr)}
     .rez-form{grid-template-columns:1fr}
   }
