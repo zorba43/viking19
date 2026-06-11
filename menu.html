@@ -111,26 +111,20 @@ footer.mini .copy{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing
 
 <!-- HEADER -->
 <header id="hdr">
-  <div class="nav" style="display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 40px;width:100%">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:18px 40px;width:100%">
 
     <!-- Sol: Logo -->
-    <a href="index.html" style="text-decoration:none">
+    <a href="index.html" style="text-decoration:none;flex-shrink:0">
       <span class="wordmark"><span class="name">VIKING19</span><span class="sub">Golf Pub</span></span>
     </a>
 
-    <!-- Orta: Dil + Sosyal ikonlar -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;position:absolute;left:50%;transform:translateX(-50%)">
-      <!-- Dil butonları üstte -->
-      <div style="display:flex;gap:14px;align-items:center">
-        <button onclick="setLang('tr')" id="lang-tr" style="background:none;border:none;border-bottom:1px solid #c9a45a;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:1;padding:0 0 2px;transition:.2s">TR</button>
-        <button onclick="setLang('en')" id="lang-en" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">EN</button>
-        <button onclick="setLang('ru')" id="lang-ru" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">RU</button>
-        <button onclick="setLang('de')" id="lang-de" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.2em;font-weight:400;color:#f1e8d4;opacity:.5;padding:0 0 2px;transition:.2s">DE</button>
-      </div>
-      <!-- İkonlar ve yazılar altta -->
-      <div style="display:flex;align-items:flex-start;gap:24px">
-        <a href="https://www.instagram.com/viking19hole/" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;opacity:.85;transition:.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+    <!-- Orta: Sosyal ikonlar -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;position:absolute;left:50%;transform:translateX(-50%);padding-top:4px">
+      <div style="display:flex;align-items:center;gap:32px">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/viking19hole/" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;transition:.25s;opacity:.9" onmouseover="this.style.opacity='1';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='.9';this.style.transform='translateY(0)'">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
             <defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" style="stop-color:#f09433"/>
               <stop offset="25%" style="stop-color:#e6683c"/>
@@ -138,34 +132,55 @@ footer.mini .copy{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing
               <stop offset="75%" style="stop-color:#cc2366"/>
               <stop offset="100%" style="stop-color:#bc1888"/>
             </linearGradient></defs>
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="1.8"/>
-            <circle cx="12" cy="12" r="4" stroke="url(#ig)" stroke-width="1.8"/>
-            <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/>
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="1.8" fill="none"/>
+            <circle cx="12" cy="12" r="4.5" stroke="url(#ig)" stroke-width="1.8" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="1.3" fill="url(#ig)"/>
           </svg>
-          <span style="font-family:'EB Garamond',serif;font-size:.6rem;letter-spacing:.14em;color:#f1e8d4;opacity:.7;text-transform:uppercase">Instagram</span>
+          <span style="font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.22em;color:#f1e8d4;opacity:.6;text-transform:uppercase">Instagram</span>
         </a>
-        <a href="https://www.tripadvisor.com.tr/Restaurant_Review-g297963-d28656234-Reviews-Viking19_Golf_Pub-Serik_Serik_District_Turkish_Mediterranean_Coast.html" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;opacity:.85;transition:.2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">
-          <svg width="26" height="22" viewBox="0 0 32 22" fill="none">
-            <circle cx="8" cy="11" r="7" fill="#34E0A1" stroke="#00AA6C" stroke-width="1"/>
-            <circle cx="24" cy="11" r="7" fill="#34E0A1" stroke="#00AA6C" stroke-width="1"/>
-            <circle cx="8" cy="11" r="3" fill="white"/>
-            <circle cx="24" cy="11" r="3" fill="white"/>
-            <circle cx="8" cy="11" r="1.5" fill="#00AA6C"/>
-            <circle cx="24" cy="11" r="1.5" fill="#00AA6C"/>
-            <path d="M12 5 Q16 2 20 5" stroke="#00AA6C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+        <!-- TripAdvisor -->
+        <a href="https://www.tripadvisor.com.tr/Restaurant_Review-g297963-d28656234-Reviews-Viking19_Golf_Pub-Serik_Serik_District_Turkish_Mediterranean_Coast.html" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;transition:.25s;opacity:.9" onmouseover="this.style.opacity='1';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='.9';this.style.transform='translateY(0)'">
+          <svg width="34" height="22" viewBox="0 0 52 32" fill="none">
+            <circle cx="13" cy="16" r="12" fill="#34E0A1"/>
+            <circle cx="39" cy="16" r="12" fill="#34E0A1"/>
+            <circle cx="13" cy="16" r="12" stroke="#00AA6C" stroke-width="1.5" fill="none"/>
+            <circle cx="39" cy="16" r="12" stroke="#00AA6C" stroke-width="1.5" fill="none"/>
+            <circle cx="13" cy="16" r="5" fill="white"/>
+            <circle cx="39" cy="16" r="5" fill="white"/>
+            <circle cx="13" cy="16" r="2.5" fill="#00AA6C"/>
+            <circle cx="39" cy="16" r="2.5" fill="#00AA6C"/>
+            <path d="M18 7 Q26 3 34 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <polygon points="24,3 26,8 28,3" fill="#FF0000"/>
           </svg>
-          <span style="font-family:'EB Garamond',serif;font-size:.6rem;letter-spacing:.14em;color:#f1e8d4;opacity:.7;text-transform:uppercase">Tripadvisor</span>
+          <span style="font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.22em;color:#f1e8d4;opacity:.6;text-transform:uppercase">Tripadvisor</span>
         </a>
+
       </div>
     </div>
 
-    <!-- Sağ: Nav -->
-    <nav class="nav-links" id="main-nav" style="display:flex;gap:18px;align-items:center">
-      <a href="menu.html" id="nav-menu">MENÜ</a>
-      <a href="#" id="nav-rezervasyon" onclick="document.getElementById('rez-popup').style.display='flex';return false">REZERVASYON</a>
-    </nav>
+    <!-- Sağ: Nav + Dil -->
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex-shrink:0">
 
-    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+      <!-- Nav linkleri — logo ile hizalı -->
+      <nav style="display:flex;gap:24px;align-items:center">
+        <a href="menu.html" id="nav-menu" style="font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;opacity:.85;text-decoration:none;transition:.25s" onmouseover="this.style.color='#c9a45a';this.style.opacity='1'" onmouseout="this.style.color='#f1e8d4';this.style.opacity='.85'">MENÜ</a>
+        <a href="#rezervasyon" id="nav-rezervasyon" style="font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;opacity:.85;text-decoration:none;transition:.25s" onmouseover="this.style.color='#c9a45a';this.style.opacity='1'" onmouseout="this.style.color='#f1e8d4';this.style.opacity='.85'">REZERVASYON</a>
+      </nav>
+
+      <!-- Dil butonları — altında boşluklu -->
+      <div style="display:flex;gap:16px;align-items:center">
+        <button onclick="setLang('tr')" id="lang-tr" style="background:none;border:none;border-bottom:1px solid #c9a45a;cursor:pointer;font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.2em;color:#f1e8d4;opacity:1;padding:2px 0 3px;transition:.2s">TR</button>
+        <button onclick="setLang('en')" id="lang-en" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px;transition:.2s">EN</button>
+        <button onclick="setLang('ru')" id="lang-ru" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px;transition:.2s">RU</button>
+        <button onclick="setLang('de')" id="lang-de" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px;transition:.2s">DE</button>
+      </div>
+
+    </div>
+
+    <!-- Mobil burger -->
+    <button class="burger" id="burger" aria-label="Menü" style="display:none"><span></span><span></span><span></span></button>
+
   </div>
 </header>
 
