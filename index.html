@@ -42,8 +42,9 @@
   .nav-links{display:flex;gap:18px;align-items:center;margin-left:auto}
   .nav-links a{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;transition:.25s;color:#f1e8d4}
   .nav-links a:hover{opacity:1;color:var(--gold)}
-  .burger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0}
+  .burger{display:flex;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0;z-index:60}
   .burger span{width:26px;height:1.5px;background:var(--ink)}
+  @media(min-width:861px){.burger{display:none !important}}
 
   .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:15px 40px;border-radius:2px;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;transition:.3s}
   .btn:hover{background:var(--gold);color:var(--bg)}
@@ -99,7 +100,6 @@
     .wordmark .name{font-size:1rem !important;letter-spacing:.15em !important}
     .wordmark .sub{font-size:.42rem !important}
     header div[style*="flex-direction:column"]{display:none !important}
-    .burger{display:flex !important;z-index:60}
     .nav-links{position:fixed;inset:0;background:rgba(20,17,13,.98);flex-direction:column;justify-content:center;transform:translateX(100%);transition:.4s;display:flex}
     .nav-links.open{position:fixed !important;inset:0 !important;background:rgba(13,11,8,.98) !important;flex-direction:column !important;justify-content:center !important;align-items:center !important;gap:28px !important;transform:translateX(0) !important;z-index:55 !important;display:flex !important}
     .nav-links a{font-size:1.1rem !important;letter-spacing:.2em !important}
@@ -185,7 +185,7 @@
     </div>
 
     <!-- Mobil burger -->
-    <button class="burger" id="burger" aria-label="Menü" style="display:none"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
 
   </div>
 </header>
@@ -332,9 +332,6 @@
 <script>
   const hdr=document.getElementById('hdr');
   addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40));
-  const burger=document.getElementById('burger'), menu=document.getElementById('main-nav');
-  burger.addEventListener('click',()=>menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
   document.getElementById('yil').textContent=new Date().getFullYear();
   function rezGonder(){
     const ad=r_ad.value.trim(),tel=r_tel.value.trim(),tarih=r_tarih.value,saat=r_saat.value,kisi=r_kisi.value,range=r_range.value,not=r_not.value.trim();
@@ -420,6 +417,38 @@ function setLang(lang) {
 }
 
 setLang(currentLang);
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('main-nav');
+
+  if(burger){
+    burger.addEventListener('click', function(){
+      if(nav.style.display === 'flex'){
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.position = 'fixed';
+        nav.style.inset = '0';
+        nav.style.background = 'rgba(13,11,8,.98)';
+        nav.style.flexDirection = 'column';
+        nav.style.justifyContent = 'center';
+        nav.style.alignItems = 'center';
+        nav.style.gap = '32px';
+        nav.style.zIndex = '55';
+      }
+    });
+  }
+
+  if(nav){
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.style.display = 'none';
+      });
+    });
+  }
+});
 </script>
 </body>
 </html>
