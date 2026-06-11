@@ -36,13 +36,13 @@
   .wordmark-lg .sub{font-size:.68rem;margin-top:8px}
 
   /* HEADER */
-  header{position:fixed;top:0;left:0;width:100%;z-index:50;transition:.4s}
+  header{position:fixed;top:0;left:0;width:100%;z-index:100;transition:.4s}
   header.solid{background:rgba(20,17,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 40px;width:100%}
   .nav-links{display:flex;gap:18px;align-items:center;margin-left:auto}
   .nav-links a{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;transition:.25s;color:#f1e8d4}
   .nav-links a:hover{opacity:1;color:var(--gold)}
-  .burger{display:flex;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0;z-index:60}
+  .burger{display:flex;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0;z-index:9999 !important;position:relative}
   .burger span{width:26px;height:1.5px;background:var(--ink)}
   @media(min-width:861px){.burger{display:none !important}}
 
@@ -422,32 +422,18 @@ setLang(currentLang);
 document.addEventListener('DOMContentLoaded', function(){
   var burger = document.getElementById('burger');
   var nav = document.getElementById('main-nav');
+  if(!burger || !nav) return;
 
-  if(burger){
-    burger.addEventListener('click', function(){
-      if(nav.style.display === 'flex'){
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-        nav.style.position = 'fixed';
-        nav.style.inset = '0';
-        nav.style.background = 'rgba(13,11,8,.98)';
-        nav.style.flexDirection = 'column';
-        nav.style.justifyContent = 'center';
-        nav.style.alignItems = 'center';
-        nav.style.gap = '32px';
-        nav.style.zIndex = '55';
-      }
-    });
-  }
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = nav.style.display === 'flex';
+    nav.style.cssText = isOpen ? 'display:none' :
+      'display:flex;position:fixed;inset:0;background:rgba(13,11,8,.98);flex-direction:column;justify-content:center;align-items:center;gap:32px;z-index:999;';
+  });
 
-  if(nav){
-    nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        nav.style.display = 'none';
-      });
-    });
-  }
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.style.display='none'; });
+  });
 });
 </script>
 </body>
