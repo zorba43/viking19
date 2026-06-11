@@ -25,7 +25,7 @@
 
   /* Görsel yer tutucu: resim yoksa dosya adını gösterir */
   .media{position:relative;background:var(--bg-2);overflow:hidden}
-  .media::after{content:"⛳  " attr(data-name);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:'Inter';font-size:.8rem;letter-spacing:.08em;text-align:center;padding:12px;background:repeating-linear-gradient(45deg,var(--bg-2),var(--bg-2) 14px,#221b14 14px,#221b14 28px)}
+  .media::after{display:none !important;content:none !important}
   .media img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
 
   /* Logo yazısı: VIKING19 / GOLF PUB */
@@ -45,6 +45,7 @@
   .burger{display:flex;flex-direction:column;gap:6px;cursor:pointer;background:none;border:0;z-index:9999 !important;position:relative}
   .burger span{width:26px;height:1.5px;background:var(--ink)}
   @media(min-width:861px){.burger{display:none !important}}
+  @media(max-width:860px){nav[style*="display:flex"][style*="gap:24px"]{display:none !important}}
 
   .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:15px 40px;border-radius:2px;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;transition:.3s}
   .btn:hover{background:var(--gold);color:var(--bg)}
@@ -183,6 +184,11 @@
       </div>
 
     </div>
+
+    <nav id="main-nav" style="display:none;position:fixed;inset:0;background:rgba(13,11,8,.98);flex-direction:column;justify-content:center;align-items:center;gap:32px;z-index:9998">
+      <a href="menu.html" id="nav-menu-mob" style="font-family:'Inter',sans-serif;font-size:1.2rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;text-decoration:none">MENÜ</a>
+      <a href="#rezervasyon" id="nav-rezervasyon-mob" style="font-family:'Inter',sans-serif;font-size:1.2rem;letter-spacing:.2em;text-transform:uppercase;color:#f1e8d4;text-decoration:none">REZERVASYON</a>
+    </nav>
 
     <!-- Mobil burger -->
     <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
