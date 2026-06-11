@@ -419,22 +419,38 @@ function setLang(lang) {
 setLang(currentLang);
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  var burger = document.getElementById('burger');
+(function(){
+  var btn = document.getElementById('burger');
   var nav = document.getElementById('main-nav');
-  if(!burger || !nav) return;
+  if(!btn || !nav) { console.log('burger veya nav bulunamadi'); return; }
 
-  burger.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = nav.style.display === 'flex';
-    nav.style.cssText = isOpen ? 'display:none' :
-      'display:flex;position:fixed;inset:0;background:rgba(13,11,8,.98);flex-direction:column;justify-content:center;align-items:center;gap:32px;z-index:999;';
-  });
+  btn.style.cursor = 'pointer';
+  btn.style.zIndex = '9999';
+
+  btn.onclick = function(){
+    console.log('burger tiklandi');
+    if(nav.style.display === 'flex'){
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.position = 'fixed';
+      nav.style.top = '0';
+      nav.style.left = '0';
+      nav.style.right = '0';
+      nav.style.bottom = '0';
+      nav.style.background = 'rgba(13,11,8,.98)';
+      nav.style.flexDirection = 'column';
+      nav.style.justifyContent = 'center';
+      nav.style.alignItems = 'center';
+      nav.style.gap = '32px';
+      nav.style.zIndex = '9998';
+    }
+  };
 
   nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.style.display='none'; });
+    a.onclick = function(){ nav.style.display = 'none'; };
   });
-});
+})();
 </script>
 </body>
 </html>
