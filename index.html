@@ -215,6 +215,12 @@
           <span style="font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.2em;color:#f1e8d4;opacity:.7;text-transform:uppercase">Tripadvisor</span>
         </a>
       </div>
+      <div style="display:flex;gap:20px;align-items:center;margin-top:8px;padding-top:24px;border-top:1px solid rgba(244,237,224,.12)">
+        <button onclick="setLang('tr');document.getElementById('main-nav').style.display='none'" id="mob-lang-tr" style="background:none;border:none;border-bottom:1px solid #c9a45a;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9rem;letter-spacing:.2em;color:#f1e8d4;opacity:1;padding:2px 0 3px">TR</button>
+        <button onclick="setLang('en');document.getElementById('main-nav').style.display='none'" id="mob-lang-en" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px">EN</button>
+        <button onclick="setLang('ru');document.getElementById('main-nav').style.display='none'" id="mob-lang-ru" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px">RU</button>
+        <button onclick="setLang('de');document.getElementById('main-nav').style.display='none'" id="mob-lang-de" style="background:none;border:none;border-bottom:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:.9rem;letter-spacing:.2em;color:#f1e8d4;opacity:.5;padding:2px 0 3px">DE</button>
+      </div>
     </nav>
 
     <!-- Mobil burger -->
@@ -433,6 +439,14 @@ function setLang(lang) {
       btn.style.opacity = l === lang ? '1' : '.5';
       btn.style.borderBottom = l === lang ? '1px solid #c9a45a' : 'none';
       btn.style.paddingBottom = l === lang ? '2px' : '0';
+    }
+  });
+
+  ['tr','en','ru','de'].forEach(function(l){
+    var mob = document.getElementById('mob-lang-'+l);
+    if(mob){
+      mob.style.opacity = l === lang ? '1' : '.5';
+      mob.style.borderBottom = l === lang ? '1px solid #c9a45a' : '1px solid transparent';
     }
   });
 
