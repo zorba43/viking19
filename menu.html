@@ -41,7 +41,7 @@ header.solid{background:rgba(13,11,8,.95);backdrop-filter:blur(10px);border-bott
 .hero-title{font-family:'EB Garamond',serif;font-size:clamp(3rem,7vw,6rem);color:var(--ink);font-weight:500;line-height:1.05;letter-spacing:.04em}
 
 /* CATEGORY NAV */
-.cat-nav-wrap{position:sticky;top:var(--hh);z-index:40;background:rgba(13,11,8,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.cat-nav-wrap{position:-webkit-sticky;position:sticky;top:var(--hh);z-index:40;background:rgba(13,11,8,.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .cat-nav{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:0 24px}
 .cat-nav::-webkit-scrollbar{display:none}
 .cat-nav a{flex-shrink:0;padding:18px 16px;font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;transition:.25s;white-space:nowrap}
@@ -89,6 +89,7 @@ footer.mini .copy{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing
   .nav-links a{font-size:1.1rem !important;letter-spacing:.2em !important}
   .hero-title{font-size:clamp(2rem,12vw,4rem) !important}
   .cat-nav{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:10px 16px}
+  .cat-nav-wrap{position:-webkit-sticky;position:sticky;top:60px;-webkit-backdrop-filter:blur(10px)}
   .menu-item{display:flex !important;flex-direction:row !important;align-items:center !important;gap:16px !important;padding:16px 0 !important}
   .menu-item img{width:100px !important;height:100px !important;object-fit:cover !important;border-radius:6px !important;flex-shrink:0 !important}
   .menu-item .media{width:100px !important;height:100px !important;flex-shrink:0 !important;border-radius:6px !important}
@@ -107,12 +108,14 @@ footer.mini .copy{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing
 }
 
 /* ── WORLD CUP MODE ── */
-.wc-locked{position:relative;overflow:hidden}
-.wc-locked>*:not(.wc-overlay){filter:blur(6px);pointer-events:none;user-select:none;transition:filter .3s}
+.wc-locked{position:relative;overflow:hidden;min-height:300px}
+.wc-locked>*:not(.wc-overlay){-webkit-filter:blur(6px);filter:blur(6px);pointer-events:none;user-select:none;transition:-webkit-filter .3s,filter .3s}
 .wc-overlay{
   position:absolute;inset:0;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  z-index:20;padding:24px;text-align:center
+  z-index:20;padding:24px;text-align:center;
+  background:rgba(13,11,8,.4);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)
 }
 .lock-inner{
   background:rgba(15,15,15,0.92);
@@ -1022,6 +1025,7 @@ function wcUpdateLockTexts() {
 (function() {
   if (!WORLD_CUP_MODE) return;
 
+  console.log('WC: kilitli bölüm sayısı =', LOCKED_IDS.length, LOCKED_IDS);
   LOCKED_IDS.forEach(function(id) {
     var sec = document.querySelector('section[id="' + id + '"]');
     if (!sec) { console.warn('WC: section bulunamadı →', id); return; }
